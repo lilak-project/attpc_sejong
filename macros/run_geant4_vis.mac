@@ -1,0 +1,30 @@
+<common config_common.mac
+
+LKG4Manager/VisMode true
+LKG4Manager/G4OutputFile data/tpc_sim.root
+LKG4Manager/G4InputFile single_proton_100MeV.gen
+#LKG4Manager/G4VisFile
+#LKG4Manager/G4MacroFile
+
+MCSetEdepSum/persistency true
+MCStep/persistency true
+MCSecondary/persistency true
+MCTrackVertex/persistency true
+
+G4/
+    vis/open OGL 600x600-0+0
+    vis/drawVolume
+    run/setCutForAGivenParticle e- 100. mm
+    #vis/scene/add/axes 0 0 0 500 mm
+    vis/viewer/flush
+    vis/viewer/set/lightsVector -1 0 0
+    vis/viewer/set/style wireframe
+    vis/viewer/set/auxiliaryEdge true
+    vis/modeling/trajectories/create/drawByCharge
+    vis/scene/endOfEventAction accumulate
+    vis/geometry/set/visibility World 0 false
+    vis/viewer/set/viewpointThetaPhi 100 160
+#G4/vis/viewer/set/autoRefresh true
+#G4/tracking/verbose 1
+#G4/vis/verbose warnings
+#G4/run/beamOn 1

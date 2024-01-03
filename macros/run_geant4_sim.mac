@@ -1,0 +1,17 @@
+# (lilak) geant4 run macro
+<common config_common.mac
+
+LKG4Manager/VisMode false
+LKG4Manager/G4OutputFile data/tpc_sim.root
+LKG4Manager/G4InputFile single_proton_100MeV.gen
+#LKG4Manager/G4VisFile
+#LKG4Manager/G4MacroFile
+
+MCSetEdepSum/persistency true
+MCStep/persistency true
+MCSecondary/persistency true
+MCTrackVertex/persistency true
+
+G4/run/setCutForAGivenParticle e- 100. mm
+G4/run/suppressPP true
+G4/run/beamOnAll
